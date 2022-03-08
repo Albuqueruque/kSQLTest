@@ -53,30 +53,32 @@ function App() {
 
   //Fica verificando a url/realtime-price e chama a função fetch
   useEffect(() => {
+    let isMounted = true
+    const intervalId = setInterval(() => {
     fetchStockPrice();
-    console.log("Status", status)
-    const eventSource = new EventSource(`${BaseURL}/teste`);
-    eventSource.onmessage = (e) => updateStockPrices(e.data);
-    return () => {
-      eventSource.close();
-    };
+    // const eventSource = new EventSource(`${BaseURL}/teste`);
+    // eventSource.onmessage = (e) => updateStockPrices(e.data);
+    // return () => {
+    //   eventSource.close();
+    // };
+  }, 5000)
+  return () => clearInterval(intervalId); //This is important
   }, []);
 
   //Chamar a tebela
   useEffect(() => {
-    console.log("Tabela aqui!");
     callTable()
   }, [stockPrices])
 
   return (
     <div className="App">
       <table>
-        <caption>Informação do produto</caption>
+        <caption>Informação dos paises</caption>
         <thead>
           <tr>
             <th>S/N</th>
             <th>Nome</th>
-            <th>Valor</th>
+            <th>Codigo</th>
           </tr>
         </thead>
         <tbody>

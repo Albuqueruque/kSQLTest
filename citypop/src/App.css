@@ -1,11 +1,16 @@
 
+body {
+  background-color: rgba(137,133,142)
+}
+
 table {
   font-family    : 'Poppins', sans-serif;
   font-style: Poppins;
   margin         : 25px auto;
   border-collapse: collapse;
-  border         : 1px solid #eee;
-  border-bottom  : 2px solid #00cccc;
+  border         : 1px solid #e1dee5;
+  border-bottom  : 2px solid #9E93A9;
+  color          : #fff;
   box-shadow     : 0px 0px 20px rgba(0, 0, 0, 0.10),
     0px 10px 20px rgba(0, 0, 0, 0.05),
     0px 20px 20px rgba(0, 0, 0, 0.05),
@@ -14,15 +19,16 @@ table {
 
 th,
 td {
-  color          : #999;
-  border         : 1px solid #eee;
+  color          : rgb(255, 255, 255);
+  border         : 1px solid #e1dee5;
   padding        : 12px 35px;
   border-collapse: collapse;
+  background    : #9E93A9;
 }
 
 th {
-  background    : #00cccc;
-  color         : #fff;
+  background    : #8f70ad;
+  color         : #e1dee5;
   text-transform: uppercase;
   font-size     : 12px;
   border-right  : none;
